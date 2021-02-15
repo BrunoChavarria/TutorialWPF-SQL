@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ConexionBDLibros.Vistas.VistaPedidos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConexionBDLibros.Vistas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500" Background="White" Loaded="UserControl_Loaded">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Pedidos" Grid.ColumnSpan="3" Grid.Column="0">
+            
+            <StackPanel Orientation="Vertical">
+
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="Nombre Cliente"/>
+                        <TextBox x:Name="boxNombreCliente" Width="150" Height="40" TextInput="boxNombreCliente_TextInput"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="Apellido Cliente"/>
+                        <TextBox x:Name="boxApellidoCliente" Width="150" Height="40" PreviewTextInput="boxApellidoCliente_PreviewTextInput"/>
+                    </StackPanel>
+                    
+                    
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="Titulo Libro"/>
+                        <TextBox x:Name="boxTituloLibro" Width="150" Height="40"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="Cantidad de Libros"/>
+                        <TextBox x:Name="boxCantidad" Width="100" Height="40" PreviewTextInput="boxCantidad_PreviewTextInput"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Grid Margin="0 10 0 0" HorizontalAlignment="Center">
+                    <DataGrid x:Name="TablaPedidos" Background="LightGray" Height="200" Width="420" IsReadOnly="True"/>
+                </Grid>
+
+                <Button x:Name="BtnIngresar" Content="Ingresar" Height="50" Width="180" FontSize="18pt" HorizontalAlignment="Center" Margin="0 20 0 0" Click="BtnIngresar_Click"/>
+
+            </StackPanel>
+            
+        </GroupBox>
+    </Grid>
+</UserControl>
